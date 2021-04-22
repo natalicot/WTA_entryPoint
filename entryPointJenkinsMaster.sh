@@ -19,6 +19,7 @@ echo \
 
 sudo apt-get update || exit 1
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y || exit 1
+apt-get install -y docker-compose
 
 echo "cloning Docker compose Repo"
 
@@ -26,4 +27,8 @@ sudo mkdir -p /home/azureuser/work
 sudo chmod -R 777 /home/azureuser/work
 
 git clone https://github.com/natalicot/Jenkins_GitLab_Artifactory_compose.git /home/azureuser/work
+
+sudo docker build -t jenkins /home/azureuser/work/
+cd /home/azureuser/work/ || exit 1
+sudo docker-compose up 
 
