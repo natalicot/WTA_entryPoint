@@ -7,3 +7,11 @@ sudo apt install nodejs || exit 1
 
 # echo "cloning app from natalis repo"
 # mkdir /home/azureuser/work || exit 1
+
+sudo apt update
+
+sudo apt install default-jre -y
+sudo apt install default-jdk -y
+sudo mkdir -p /home/azureuser/work
+sudo chmod -R 777 /home/azureuser/work
+sudo apt-get install zip unzip
